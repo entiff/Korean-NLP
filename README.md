@@ -1,4 +1,4 @@
-﻿
+﻿﻿# Korean-NLP-tutorial
 
 ## 목차
 1. Dataset - korquad, 박규병님 NMT, 영화리뷰
@@ -21,4 +21,4 @@
 - Python 3.6
 - Tensorflow 2.0
 
-#### Collaborators: 김태희, 양태일, 전윤회, 조단비, 홍지민
+#### Collaborators: 김태희, 양태일, 전윤회, 조단비, 홍지미
