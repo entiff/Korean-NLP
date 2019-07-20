@@ -21,4 +21,4 @@
 - Python 3.6
 - Tensorflow 2.0
 
-#### Collaborators: 김태희, 양태일, 전윤회, 조단비, 홍지미
+#### Collaborators: 김태희, 양태일, 전윤회, 조단비!s, 홍지미
