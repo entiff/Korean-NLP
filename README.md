@@ -1,5 +1,9 @@
 # Korean-NLP-tutorial
 
+### 윤회의 branch 입니다 
+
+
+
 ## 목차
 1. Dataset - korquad, 박규병님 NMT, 영화리뷰
 2. Preprocessing - 불용어 처리, 토크나이저(Word Piece) / 형태소 분석기
