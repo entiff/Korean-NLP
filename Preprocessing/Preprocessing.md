@@ -1,32 +1,36 @@
-"""
-형태소 분석은 형태소, 어근, 접두사/접미사, 품사 등 다양한 언어적 속성의 구조를 파악하는 것이다.
-품사 태깅은 형태소의 뜻과 문맥을 고려해 형태소에 태그를 달아주는 것이다.
-태그의 가짓수는 형태소 분석기마다 상이하다.(9~56개)
+# 1. 형태소 분석
+형태소 분석은 형태소, 어근, 접두사/접미사, 품사 등 다양한 언어적 속성의 구조를 파악하는 것입니다.
+품사 태깅은 형태소의 뜻과 문맥을 고려해 형태소에 태그를 달아주는 것입니다.
+태그의 가짓수는 형태소 분석기마다 다릅니다.(9~56개)
 ex) 가방에 들어가신다 -> 가방/NNG + 에/JKM + 들어가/VV + 시/EPH + ㄴ다/EFN
 
-KoNLPy에서 5개의 형태소 분석기(Kkma, Komoran, Hannanum, Okt, Mecab)를 이용할 수 있다.
-"""
-# 설치 방법
-# https://konlpy.org/ko/v0.5.1/install
+KoNLPy에서 5개의 형태소 분석기(Kkma, Komoran, Hannanum, Okt, Mecab)를 이용할 수 있습니다.
+단, Windows에서는 Mecab을 이용할 수 없습니다.
 
-# 한나눔
+# 2. [설치](http://konlpy.org/ko/v0.5.1/install)
+
+# 3. 형태소 분석기
+
+## 3-1. 한나눔
+
+~~~
 from konlpy.tag import Hannanum
 
 hannanum = Hannanum()
 
 # 형태소
 print(hannanum.morphs('웃으면 복이 옵니다'))
-
 # 형태소 후보군
 print(hannanum.analyze('웃으면 복이 옵니다'))
-
 # 명사
 print(hannanum.nouns('웃으면 복이 옵니다'))
-
 # 품사(ntags = 9 or 22)
 print(hannanum.pos('웃으면 복이 옵니다.'))
+~~~
 
-# 꼬꼬마
+## 3-2. 꼬꼬마
+
+~~~
 from konlpy.tag import Kkma
 
 kkma = Kkma()
@@ -42,8 +46,11 @@ print(kkma.pos('이 또한 지나가리라'))
 
 # 문장 발견
 print(kkma.sentences('이 또한 지나가리라'))
+~~~
 
-# 코모란
+## 3-3. 코모란
+
+~~~
 from konlpy.tag import Komoran
 
 dicpath = "D://koreannlp/dic.txt"
@@ -57,10 +64,12 @@ print(komoran.nouns('코모란도 오픈소스가 되었습니다'))
 
 # 품사
 print(komoran.pos('코모란도 오픈소스가 되었습니다'))
+~~~
 
+# Mecab
 
-# Mecab (Mecab() is not supported on Windows)
-
+~~~
+#Mecab() is not supported on Windows
 from konlpy.tag import Mecab
 
 mecab = Mecab(dicpath='usr/local/lib/mecab/mecab-ko-dic')
@@ -73,10 +82,12 @@ print(mecab.morphs('Mecab은 여러 형태소 분석기들 가운데 가장 빠�
 
 # 품사
 print(mecab.pos('Mecab은 여러 형태소 분석기들 가운데 가장 빠른 속도를 자랑합니다'))
+~~~
 
+# Okt
 
-# Okt (Twitter() has been changed to Okt() since v0.5.0)
-
+~~~
+# Twitter() has been changed to Okt() since v0.5.0
 from konlpy.tag import Okt
 
 okt = Okt()
@@ -100,3 +111,4 @@ print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다'))
 print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다', norm=True))
 print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다', stem=True))
 print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다', join=True))
+~~~
