@@ -1,4 +1,4 @@
-## 1. 형태소 분석
+﻿## 1. 형태소 분석
 형태소 분석은 형태소, 어근, 접두사/접미사, 품사 등 다양한 언어적 속성의 구조를 파악하는 것입니다.
 품사 태깅은 형태소의 뜻과 문맥을 고려해 형태소에 태그를 달아주는 것을 말합니다.
 태그의 가짓수는 형태소 분석기마다 다릅니다.(9~56개)  
@@ -111,4 +111,61 @@ print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다'))
 print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다', norm=True))
 print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다', stem=True))
 print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다', join=True))
+~~~
+
+
+# 4 - Byte-pair Tokenizer
+
+
+
+reference: https://github.com/lovit/WordPieceModel
+
+WordPiece 기반 Tokenizer에서 가장 많이 쓰이는 방법은 데이터 압축 기법인 호프만 코딩을 사용하는 것입니다.
+호프만 코딩은 (https://ndb796.tistory.com/18) 특정 문자열의 반복이 빈번하게 일어나는 경우, 하나의 subword unit으로 인식하여 압축하는 기법입니다.
+
+이러한 아이디어를 차용한 tokenizer가 Bpe tokenizer 입니다.
+
+Bpe-Tokenizer는 기존 Komoran이나 세종 등 다른 Corpus에서 품사, 명사, 용언 체언 등 미리 정의 되어있는 단어를 기반으로 tokenize를 하는 것이 아닌,
+갖고있는 데이터 기준으로, tokenize 합니다.
+
+따라서 기존의 형태소 분석기처럼 해당 토큰의 형태소가 어떤 품사에 속하는 지는 인지는 알수 없지만 데이터에 기반해 만들어 내므로, 해당 도메인에 맞는 토큰을 가질 수 있습니다.
+
+
+
+
+
+~~~
+
+## 먼저 학습 시킬 Corpus의 경로를 불러옵니다.
+corpus="C:/Users/Jimmy Hong/PycharmProjects/QA/Bpe/KorQuAD_train.csv"
+squad=pd.read_csv(corpus)
+contexts=set(squad['context'])
+
+
+# 이후에 tokenize할 데이터셋을 불러옵니다.
+sent = '이 형태소 분석기는 기존 단어사전에 있는 단어로 구성하여 분리하는 게 아닌 데이터에 기반한 방법입니다.' \
+       '학습시키는 데이터에 따라 형태소가 다르게  될 수 있습니다.'
+
+
+# 만들어 낼 subword unit 갯수
+bpe=BytePairEncoder(n_iters=500)
+
+
+tokens=bpe.tokenize(sent)
+
+bpe.units
+
+tokens.split(" ")
+
+#tokens=['이_ 형 태 소_ 분 석 기는_ 기 존 _ 단 어 사 전에_ 있는_ 단 어 로_ 구 성 하여_ 분 리 하는_ 게_ 아 닌 _ 데 이 터 에_ 기 반 한_ 방 법 입 니 다.
+# 학 습 시키 는_ 데 이 터 에_ 따라_ 형 태 소 가_ 다 르 게_ 될_ 수_ 있 습 니 다._']
+
+
+# 저장된 단어의 corpus를 저장합니다
+bpe.save("./vocab.txt")
+
+
+# 저장된 단어의 corpus를 불러옵니다.
+bpe.load("./vocab.txt")
+
 ~~~
