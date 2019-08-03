@@ -1,6 +1,6 @@
 ## 1. 형태소 분석
 형태소 분석은 형태소, 어근, 접두사/접미사, 품사 등 다양한 언어적 속성의 구조를 파악하는 것입니다.
-품사 태깅은 형태소의 뜻과 문맥을 고려해 형태소에 태그를 달아주는 것입니다.
+품사 태깅은 형태소의 뜻과 문맥을 고려해 형태소에 태그를 달아주는 것을 말합니다.
 태그의 가짓수는 형태소 분석기마다 다릅니다.(9~56개)  
 ex) 가방에 들어가신다 -> 가방/NNG + 에/JKM + 들어가/VV + 시/EPH + ㄴ다/EFN
 
@@ -11,7 +11,7 @@ KoNLPy에서 5개의 형태소 분석기(Kkma, Komoran, Hannanum, Okt, Mecab)를
 
 ## 3. 형태소 분석기
 
-### 3-1. 한나눔
+### 3-1. 한나눔(Hannanum)
 
 ~~~
 from konlpy.tag import Hannanum
@@ -28,7 +28,7 @@ print(hannanum.nouns('웃으면 복이 옵니다'))
 print(hannanum.pos('웃으면 복이 옵니다.'))
 ~~~
 
-### 3-2. 꼬꼬마
+### 3-2. 꼬꼬마(Kkma)
 
 ~~~
 from konlpy.tag import Kkma
@@ -48,7 +48,7 @@ print(kkma.pos('이 또한 지나가리라'))
 print(kkma.sentences('이 또한 지나가리라'))
 ~~~
 
-### 3-3. 코모란
+### 3-3. 코모란(Komoran)
 
 ~~~
 from konlpy.tag import Komoran
