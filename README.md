@@ -17,8 +17,12 @@
 
 ## Korean Dataset
 1. [KorQuAD](https://korquad.github.io/)
+
+KorQuAD는 한국어 Machine Reading Comprehension(MRC)을 위해 만든 데이터셋입니다. 모든 질의에 대한 답변은 해당 Wikipedia 문서 문단의 일부 하위 영역으로 이루어집니다. Stanford Question Answering Dataset(SQuAD) v1.0과 동일한 방식으로 구성되었습니다.
+
 2. [Naver sentiment review corpus](https://github.com/e9t/nsmc)
 
+Naver sentiment review corpus는 [네이버 영화](https://movie.naver.com/movie/point/af/list.nhn)의 네티즌 140자평을 모아놓은 데이터셋입니다.
 
 ## Version
 - Pytorch 1.0
@@ -26,4 +30,3 @@
 - Tensorflow 2.0
 
 #### Collaborators: 김태희, 양태일, 전윤회, 조단비, 홍지민
-[UNK]
