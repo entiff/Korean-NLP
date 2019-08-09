@@ -113,15 +113,10 @@ print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다', stem=True))
 print(okt.pos('Twitter가 Okt로 새롭게 단장했습니다', join=True))
 ~~~
 
-
-# 4 - Byte-pair Tokenizer
-
-
-
-reference: https://github.com/lovit/WordPieceModel
+## 4 - Byte-pair Tokenizer
 
 WordPiece 기반 Tokenizer에서 가장 많이 쓰이는 방법은 데이터 압축 기법인 호프만 코딩을 사용하는 것입니다.
-호프만 코딩은 (https://ndb796.tistory.com/18) 특정 문자열의 반복이 빈번하게 일어나는 경우, 하나의 subword unit으로 인식하여 압축하는 기법입니다.
+[호프만 코딩](https://ndb796.tistory.com/18)은 특정 문자열의 반복이 빈번하게 일어나는 경우, 하나의 subword unit으로 인식하여 압축하는 기법입니다.
 
 이러한 아이디어를 차용한 tokenizer가 Bpe tokenizer 입니다.
 
@@ -129,10 +124,6 @@ Bpe-Tokenizer는 기존 Komoran이나 세종 등 다른 Corpus에서 품사, 명
 갖고있는 데이터 기준으로, tokenize 합니다.
 
 따라서 기존의 형태소 분석기처럼 해당 토큰의 형태소가 어떤 품사에 속하는 지는 인지는 알수 없지만 데이터에 기반해 만들어 내므로, 해당 도메인에 맞는 토큰을 가질 수 있습니다.
-
-
-
-
 
 ~~~
 
@@ -169,3 +160,7 @@ bpe.save("./vocab.txt")
 bpe.load("./vocab.txt")
 
 ~~~
+
+#### References
+
+https://ndb796.tistory.com/18
