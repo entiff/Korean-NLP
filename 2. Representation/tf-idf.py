@@ -1,18 +1,17 @@
 # tf-idf.py
-from BagofWords import BagOfWords
-import pandas as pd
+
+from DTM import DTM
+import numpy as np
 
 
 def tf_idf(sentences):
-    model = BagOfWords(sentences)
-
-    doc_freq = []
-    for i in range(len(sentences)):
-        doc_freq.append(list(model.word_count(sentences[i])))
-
-    words = []
-    for i in range(len(model.idx2word)):
-        word = model.idx2word[i]
-        words.append(word)
-
-    return pd.DataFrame(doc_freq, columns=words)
+    dtm = DTM(sentences)
+    for i in range(len(dtm)):
+        for j in range(i):
+            if dtm.iloc[i, j] != 0:
+                tf = 1
+            else:
+                tf = 0
+            idf = np.log(sum(dtm[dtm.columns[j]]) + 1e-5/len(dtm))
+            dtm.iloc[i, j] = tf * idf
+    return dtm
