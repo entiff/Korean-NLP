@@ -24,7 +24,6 @@ KorQuAD는 한국어 Machine Reading Comprehension(MRC)을 위해 만든 데이�
 
 Naver sentiment review corpus는 [네이버 영화](https://movie.naver.com/movie/point/af/list.nhn)의 네티즌 140자평을 모아놓은 데이터셋입니다.
 
->>>>>>> master
 ## Version
 - Pytorch 1.0
 - Python 3.6
