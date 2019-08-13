@@ -40,7 +40,7 @@ print(vector.vocabulary_)
 {'밥을': 4, '맛있게': 2, '먹고': 3, '싶어요': 5, '공부를': 1, '하고': 7, 'nlp': 0, '잘하고': 6}
 ```
 
-![image.png](https://github.com/shwksl101/Korean-NLP-tutorial/images/tf_idf_image1.png?raw=True)
+![image.png](https://github.com/shwksl101/Korean-NLP-tutorial/blob/master/images/tf_idf_image1.png?raw=True)
 
 ```python
 import numpy as np
