@@ -1,5 +1,5 @@
-﻿## 1. [형태소 분석] 
-## 2. [설치]
+﻿## 1. [형태소 분석](https://github.com/shwksl101/Korean-NLP-tutorial/blob/daanv/1.%20Preprocessing/README.md#1-%ED%98%95%ED%83%9C%EC%86%8C-%EB%B6%84%EC%84%9D-1)
+## 2. 설치
 ## 3. [형태소 분석기]
 ## 4. [BP tokenizer] 
 ## 5. [불용어 처리] 
