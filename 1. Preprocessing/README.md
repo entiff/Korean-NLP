@@ -1,9 +1,9 @@
 ﻿## 1. [형태소 분석](https://github.com/shwksl101/Korean-NLP-tutorial/blob/daanv/1.%20Preprocessing/README.md#1-%ED%98%95%ED%83%9C%EC%86%8C-%EB%B6%84%EC%84%9D-1)
 ## 2. 설치
-## 3. [형태소 분석기]
-## 4. [BP tokenizer] 
-## 5. [불용어 처리] 
-## 6. [정규 표현식] 
+## 3. [형태소 분석기](https://github.com/shwksl101/Korean-NLP-tutorial/blob/daanv/1.%20Preprocessing/README.md#3-%ED%98%95%ED%83%9C%EC%86%8C-%EB%B6%84%EC%84%9D%EA%B8%B0)
+## 4. [BP tokenizer](https://github.com/shwksl101/Korean-NLP-tutorial/blob/daanv/1.%20Preprocessing/README.md#5-%EB%B6%88%EC%9A%A9%EC%96%B4-%EC%B2%98%EB%A6%AC)
+## 5. [불용어 처리](https://github.com/shwksl101/Korean-NLP-tutorial/blob/daanv/1.%20Preprocessing/README.md#5-%EB%B6%88%EC%9A%A9%EC%96%B4-%EC%B2%98%EB%A6%AC)
+## 6. [정규 표현식](https://github.com/shwksl101/Korean-NLP-tutorial/blob/daanv/1.%20Preprocessing/README.md#6-%EC%A0%95%EA%B7%9C-%ED%91%9C%ED%98%84%EC%8B%9D)
 
 ## 1. 형태소 분석
 형태소 분석은 형태소, 어근, 접두사/접미사, 품사 등 다양한 언어적 속성의 구조를 파악하는 것입니다.
